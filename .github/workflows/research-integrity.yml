@@ -1,5 +1,7 @@
 name: Research repository integrity
-on: [push, pull_request]
+on:
+  push:
+  pull_request:
 jobs:
   audit:
     runs-on: ubuntu-latest
@@ -8,6 +10,12 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: python -m pip install Pillow==10.4.0
-      - run: python -m compileall -q src scripts
-      - run: python scripts/generate_workflow_visual.py
+      - name: Install visualization dependency
+        run: python -m pip install Pillow==10.4.0
+      - name: Verify Python source syntax
+        run: python -m compileall -q .
+      - name: Regenerate scientific schematic
+        run: python scripts/generate_workflow_visual.py
+      - name: Verify committed artifact presence
+        run: |
+          python -c "from pathlib import Path; assert Path('assets/workflow.gif').is_file(); assert Path('assets/workflow.png').is_file()"
