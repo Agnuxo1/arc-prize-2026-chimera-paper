@@ -1,0 +1,12 @@
+.env
+.env.*
+*.key
+*.pem
+__pycache__/
+.venv/
+venv/
+data/
+datos/
+checkpoints/
+*.safetensors
+*.pt

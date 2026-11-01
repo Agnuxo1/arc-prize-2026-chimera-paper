@@ -1,0 +1,161 @@
+[
+ {
+  "id": "L016",
+  "label": "Control (graph explorer)",
+  "mean": 0.1465294118844673,
+  "sd_seeds": 3.2772933218967544e-06,
+  "levels_per_seed": [
+   14,
+   14,
+   14,
+   14,
+   14
+  ],
+  "games_with_level": 13,
+  "wall_s": 158.2
+ },
+ {
+  "id": "L017",
+  "label": "CHIMERA (holographic + click-CA)",
+  "mean": 0.30783652364177455,
+  "sd_seeds": 0.1460918604544358,
+  "levels_per_seed": [
+   19,
+   18,
+   18,
+   21,
+   20
+  ],
+  "games_with_level": 17,
+  "wall_s": 338.6,
+  "p_vs_control": 0.0008392333984375,
+  "games_up": 15,
+  "games_down": 2
+ },
+ {
+  "id": "L018",
+  "label": "CHIMERA + keyboard-CA",
+  "mean": 0.3932061748113769,
+  "sd_seeds": 0.17418041945549662,
+  "levels_per_seed": [
+   22,
+   21,
+   18,
+   19,
+   18
+  ],
+  "games_with_level": 17,
+  "wall_s": 351.6,
+  "p_vs_control": 0.004638671875,
+  "games_up": 14,
+  "games_down": 3
+ },
+ {
+  "id": "L019",
+  "label": "- click-CA",
+  "mean": 0.4039120657763535,
+  "sd_seeds": 0.09248662750584183,
+  "levels_per_seed": [
+   20,
+   20,
+   18,
+   18,
+   18
+  ],
+  "games_with_level": 16,
+  "wall_s": 355.4,
+  "p_vs_control": 0.00762939453125,
+  "games_up": 13,
+  "games_down": 3
+ },
+ {
+  "id": "L020",
+  "label": "- GOAL/DEADLY traces",
+  "mean": 0.3961289039764733,
+  "sd_seeds": 0.20873954965137953,
+  "levels_per_seed": [
+   21,
+   18,
+   18,
+   20,
+   17
+  ],
+  "games_with_level": 17,
+  "wall_s": 246.7,
+  "p_vs_control": 0.00665283203125,
+  "games_up": 14,
+  "games_down": 3
+ },
+ {
+  "id": "L021",
+  "label": "- cross-level persistence",
+  "mean": 0.3236118858208559,
+  "sd_seeds": 0.17984647190433206,
+  "levels_per_seed": [
+   22,
+   21,
+   18,
+   18,
+   19
+  ],
+  "games_with_level": 17,
+  "wall_s": 300.0,
+  "p_vs_control": 0.004638671875,
+  "games_up": 14,
+  "games_down": 3
+ },
+ {
+  "id": "L022",
+  "label": "dim 2048",
+  "mean": 0.29134497795506514,
+  "sd_seeds": 0.09634736907904279,
+  "levels_per_seed": [
+   18,
+   18,
+   18,
+   16,
+   16
+  ],
+  "games_with_level": 16,
+  "wall_s": 402.4,
+  "p_vs_control": 0.021392822265625,
+  "games_up": 12,
+  "games_down": 4
+ },
+ {
+  "id": "L023",
+  "label": "alpha 4 (submission config)",
+  "mean": 0.42162811588318233,
+  "sd_seeds": 0.19613645560728377,
+  "levels_per_seed": [
+   21,
+   19,
+   18,
+   19,
+   20
+  ],
+  "games_with_level": 16,
+  "wall_s": 327.7,
+  "p_vs_control": 0.00335693359375,
+  "games_up": 14,
+  "games_down": 2
+ },
+ {
+  "id": "L024",
+  "label": "alpha 1",
+  "mean": 0.2869090453785233,
+  "sd_seeds": 0.16974220137012008,
+  "levels_per_seed": [
+   22,
+   20,
+   18,
+   18,
+   17
+  ],
+  "games_with_level": 17,
+  "wall_s": 384.6,
+  "p_vs_control": 0.044769287109375,
+  "games_up": 13,
+  "games_down": 4
+ }
+]
