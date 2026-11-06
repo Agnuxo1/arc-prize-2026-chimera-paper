@@ -2,17 +2,31 @@
 
 [![Research repository integrity](https://github.com/Agnuxo1/arc-prize-2026-chimera-paper/actions/workflows/research-integrity.yml/badge.svg)](https://github.com/Agnuxo1/arc-prize-2026-chimera-paper/actions/workflows/research-integrity.yml) ![python: 3.11](https://img.shields.io/badge/python-3.11-3987e5?style=flat-square&logo=python&logoColor=white) ![status: paper draft, Paper Track entry not verified](https://img.shields.io/badge/status-paper%20draft,%20Paper%20Track%20entry%20not%20verified-c98500?style=flat-square) [![offline, 25 public games: 0.147 to 0.422](https://img.shields.io/badge/offline,%2025%20public%20games-0.147%20to%200.422-3987e5?style=flat-square)](#measured-evidence-and-baselines) [![Kaggle ARC-AGI-3: 0.26 public, submission 57858448](https://img.shields.io/badge/Kaggle%20ARC--AGI--3-0.26%20public,%20submission%2057858448-9085e9?style=flat-square)](#measured-evidence-and-baselines) [![ARC Prize 2026: Paper Track](https://img.shields.io/badge/ARC%20Prize%202026-Paper%20Track-d55181?style=flat-square)](https://arcprize.org/competitions/2026/paper)
 
-[**Question**](#research-question-and-objective) · [**Evidence**](#measured-evidence-and-baselines) · [**Limitations**](#experimental-controls-and-limitations) · [**Paper**](paper/WRITEUP.md) · [**Result tables**](tables/arc3_summary.json) · [**Provenance**](PROVENANCE.md) · [**Code (arc3-chimera-explorer)**](https://github.com/Agnuxo1/arc3-chimera-explorer)
+**A training-free holographic memory nearly triples the score of an identical graph explorer on 25 public ARC-AGI-3 games, on CPU, with no pre-training: 0.422 against 0.147 offline (+188 %).**
+
+[**Results**](#results-at-a-glance) · [**Question**](#research-question-and-objective) · [**Evidence**](#measured-evidence-and-baselines) · [**Limitations**](#experimental-controls-and-limitations) · [**Paper**](paper/WRITEUP.md) · [**Result tables**](tables/arc3_summary.json) · [**Provenance**](PROVENANCE.md) · [**Code (arc3-chimera-explorer)**](https://github.com/Agnuxo1/arc3-chimera-explorer)
 
 ![Conceptual animated workflow](assets/workflow.gif)
 
-Conceptual architecture illustration only. No figure frame is an experimental recording or a measured score. [Static alternative](assets/workflow.png) and [regeneration source](scripts/generate_workflow_visual.py).
+Conceptual illustration of the architecture. [Static alternative](assets/workflow.png) and [regeneration source](scripts/generate_workflow_visual.py).
 
 **Competition:** https://arcprize.org/competitions/2026/paper
 
-**Status:** PAPER DRAFT: official Kaggle Paper Track entry NOT verified
+## Results at a glance
 
-**Contents** — [Research question and objective](#research-question-and-objective) · [Background](#background) · [Architecture and hypothesis](#architecture-and-hypothesis) · [Measured evidence and baselines](#measured-evidence-and-baselines) · [Reproducibility and source provenance](#reproducibility-and-source-provenance) · [Experimental controls and limitations](#experimental-controls-and-limitations) · [Real-world applications](#real-world-applications) · [Possible improvements](#possible-improvements) · [Future work](#future-work) · [Licenses, references, and AI use](#licenses-references-and-ai-use) · [Full scientific manuscript](#full-scientific-manuscript) · [Bibliography](#bibliography)
+| Measure | Control explorer | CHIMERA |
+|---|---:|---:|
+| Offline score, 25 public games, 5 seeds | 0.147 | **0.422** (+188 %) |
+| Games improved and worsened against the control | — | **14 and 2**, paired Wilcoxon p = 0.0034 |
+| Levels completed per seed | 14 | **18 to 21** |
+| Actions to finish level 1, 13 games both solve | 1× | **0.63×**, geometric mean |
+| Cost per action, CPU only | 1.3 ms | 3.0 ms |
+| Official Kaggle ARC-AGI-3 submission | — | 57858448, complete, public score **0.26** |
+
+Three games reach levels the control never reaches: sc25, tu93 and g50t. Offline and official scores use different protocols, so they are reported separately. Data: [result tables](tables/arc3_summary.json) and [paper](paper/WRITEUP.md).
+
+
+**Contents** — [Results at a glance](#results-at-a-glance) · [Research question and objective](#research-question-and-objective) · [Background](#background) · [Architecture and hypothesis](#architecture-and-hypothesis) · [Measured evidence and baselines](#measured-evidence-and-baselines) · [Reproducibility and source provenance](#reproducibility-and-source-provenance) · [Experimental controls and limitations](#experimental-controls-and-limitations) · [Real-world applications](#real-world-applications) · [Possible improvements](#possible-improvements) · [Future work](#future-work) · [Licenses, references, and AI use](#licenses-references-and-ai-use) · [Full scientific manuscript](#full-scientific-manuscript) · [Bibliography](#bibliography)
 
 ## Research question and objective
 
@@ -65,7 +79,7 @@ Reported 25-game offline control 0.147 versus CHIMERA 0.422 (five-seed protocol)
 
 <p align="center"><img src="docs/readme/06-efficiency.gif" alt="Dot plot on a log scale of actions needed to finish level 1, control against CHIMERA" width="100%"><br><sub>Animated figure A6 — Sample efficiency on the 13 games both solve. Data: tables/arc3_first_level.json.</sub></p>
 
-The result above is deliberately phase-labelled. Any held-out competition rank not independently verified remains unknown.
+Each result above keeps the phase it was measured in.
 
 ## Reproducibility and source provenance
 
@@ -91,9 +105,11 @@ To regenerate the animation: install Python 3.11+ and Pillow 10.4.0, then run py
 
 ## Experimental controls and limitations
 
+The p-value of the α = 4 row is exploratory, because α = 4 was chosen among the tested variants.
+
 <p align="center"><img src="docs/readme/08-limits.gif" alt="Four tiles with the limits the paper states, and three further caveats" width="100%"><br><sub>Animated figure A8 — Limits stated in paper §6, with the numbers it reports.</sub></p>
 
-Paper release is not proof of Kaggle Paper Track submission. Related ARC3 source uses MIT; organizer cites public-domain-style CC0/MIT-0, which needs explicit copyright-owner resolution for prize eligibility.
+This repository holds the paper and its evidence; the Paper Track entry itself is made on Kaggle, and the private ARC-AGI-3 rank has not been published. Related ARC3 source uses MIT; organizer cites public-domain-style CC0/MIT-0, which needs explicit copyright-owner resolution for prize eligibility.
 
 A prepared archive or notebook is not evidence of an official submission. Keep public, private, warm-up and local scores distinct, and preserve baseline and ablation failures.
 
@@ -195,3 +211,16 @@ Third-party components retain their upstream licenses; no previously unlicensed 
 renders the file or the real run named in its footer, or says it is schematic or illustrative ·
 <a href="#arc-prize-2026-paper-holographic-outcome-memory">back to top ↑</a></sub>
 </div>
+
+<!-- author-background:start -->
+## Author background
+
+**Francisco Angulo de Lafuente**, independent AI researcher · [ORCID](https://orcid.org/0009-0001-1634-7063) · [arXiv](https://arxiv.org/a/angulodelafuente_f_1.html) · [Google Scholar](https://scholar.google.com/citations?user=6nOpJ9IAAAAJ) · [ResearchGate](https://www.researchgate.net/profile/Francisco-Angulo-Lafuente-3) · [Figshare](https://figshare.com/authors/Francisco_Angulo_de_Lafuente/22601234) · [Wikipedia](https://es.wikipedia.org/wiki/Francisco_Angulo_de_Lafuente)
+
+Earlier research at ECOFA focused on biotechnology for clean energy and on second-generation biofuels obtained by microbiological processing of organic waste. Two Spanish patents document that work:
+
+- **ES 2273594 B1**, *Process for obtaining fuels from organic waste*. Filed 5 September 2005, grant published 16 February 2008. [OEPM](https://www.oepm.es/pdf/ES/0000/000/02/27/35/ES-2273594_B1.pdf) · [Google Patents](https://patents.google.com/patent/ES2273594B1/en)
+- **ES 2341194 B1**, *Method for obtaining paraffin by a biological process with microorganisms from organic matter, and its refining for use as fuel*. Filed 11 September 2007, grant published 26 April 2011. Also published as EP2196519 and WO2009034217. [OEPM](https://www.oepm.es/pdf/ES/0000/000/02/34/11/ES-2341194_B1.pdf) · [Google Patents](https://patents.google.com/patent/ES2341194B1/en)
+
+These are historical publication and grant records under the inventor name Francisco Angulo Lafuente, and both have since lapsed. They are cited as evidence of a research trajectory and make no statement about current enforceability.
+<!-- author-background:end -->
