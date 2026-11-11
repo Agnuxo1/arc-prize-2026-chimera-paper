@@ -14,6 +14,10 @@ Conceptual architecture illustration only. No figure frame is an experimental re
 
 **Contents** — [Research question and objective](#research-question-and-objective) · [Background](#background) · [Architecture and hypothesis](#architecture-and-hypothesis) · [Measured evidence and baselines](#measured-evidence-and-baselines) · [Reproducibility and source provenance](#reproducibility-and-source-provenance) · [Experimental controls and limitations](#experimental-controls-and-limitations) · [Real-world applications](#real-world-applications) · [Possible improvements](#possible-improvements) · [Future work](#future-work) · [Licenses, references, and AI use](#licenses-references-and-ai-use) · [Full scientific manuscript](#full-scientific-manuscript) · [Bibliography](#bibliography)
 
+<!-- impact-note:start -->
+<sub><strong>Efficiency and practical value.</strong> Compact associative traces reuse earlier action outcomes to order future exploration, aiming to spend interaction budgets more effectively. The paper reports an offline 25-game score of 0.422 versus 0.147 for the same graph explorer without that memory. This supports the stated local comparison rather than a universal efficiency gain. See the <a href="#architecture-and-hypothesis">mechanism</a> and <a href="#measured-evidence-and-baselines">evidence</a>.</sub>
+<!-- impact-note:end -->
+
 ## Research question and objective
 
 <p align="center"><img src="docs/readme/01-question.gif" alt="Curve of the per-level score against the ratio of human to agent actions, capped at 115" width="100%"><br><sub>Animated figure A1 — The scoring rule quoted in paper §1, drawn as a curve. Illustrative, not measured data.</sub></p>
